@@ -7,6 +7,7 @@ from app.models.schemas.rwschema import RWSchema
 
 DEFAULT_ITEMS_LIMIT = 20
 DEFAULT_ITEMS_OFFSET = 0
+DEFAULT_ITEMS_TITLE = 20
 
 
 class ItemForResponse(RWSchema, Item):
@@ -42,3 +43,4 @@ class ItemsFilters(BaseModel):
     favorited: Optional[str] = None
     limit: int = Field(DEFAULT_ITEMS_LIMIT, ge=1)
     offset: int = Field(DEFAULT_ITEMS_OFFSET, ge=0)
+    titles: int =Field(DEFAULT_ITEMS_TITLE, ge=0)
